@@ -1,0 +1,1122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    transition-timing-function: linear;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.item:first-child {
+    position: fixed;
+    z-index: 10;
+    background: #000000da;
+    top: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    transition: .19s linear;
+    justify-content: center;
+    gap: 2vw;
+    padding: 1% 0;
+}
+
+.item:first-child nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+}
+
+.item:first-child>a {
+    color: #fff;
+    font-size: var(--i);
+}
+
+.item:first-child nav ul li a {
+    color: #8B8988;
+    font: 200 .9vw sans-serif;
+    transition: .2s linear;
+}
+
+.item:first-child nav ul li a:hover {
+    color: #fff;
+}
+
+.item:nth-child(2) {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    background: #000000da;
+    top: 0;
+    align-items: center;
+}
+
+.item:nth-child(2) .block {
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1% 1%;
+}
+
+.item:nth-child(2) .block h2 {
+    color: #fff;
+    font: 550 1.3vw sans-serif;
+}
+
+.item:nth-child(2) .block nav {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.item:nth-child(2) .block nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2vw;
+    align-items: center;
+}
+
+.item:nth-child(2) .block nav ul li a {
+    font: 200 .9vw sans-serif;
+    transition: .2s linear;
+    color: var(--co);
+}
+
+.item:nth-child(2) .block nav ul li a:hover {
+    color: var(--hov);
+}
+
+.item:nth-child(2) .block nav .But1 button {
+    background: transparent;
+    outline: none;
+    border: none;
+    border: .1vw solid #fff;
+    border-radius: 50px;
+    transition: .2s linear;
+    font: bold .7vw sans-serif;
+    cursor: pointer;
+    color: #fff;
+    width: 6vw;
+    height: 1.6vw;
+}
+
+.item:nth-child(2) .block nav .But2 button {
+    background: #0071E3;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: .2s linear;
+    border-radius: 50px;
+    font: .8vw sans-serif;
+    width: 3vw;
+    height: 1.6vw;
+}
+
+.item:nth-child(2) .block nav .But2:hover button {
+    background: #014b94;
+}
+
+.item:nth-child(2) .block nav .But1:hover button {
+    background: #fff;
+    color: #000;
+}
+
+.welcome {
+    width: 100%;
+    height: 400vh;
+    display: flex;
+    z-index: 1;
+    align-items: start;
+    justify-content: center;
+}
+
+.welcome video {
+    position: sticky;
+    top: 50%;
+    translate: 0 -50%;
+    width: 70%;
+}
+
+.welcome .name {
+    position: fixed;
+    top: 88%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transition: .7s linear;
+    align-items: center;
+    justify-content: center;
+    translate: -50% -88%;
+    gap: .5vw;
+}
+
+.welcome .name h1 {
+    color: #fff;
+    font: 550 5vw sans-serif;
+    display: flex;
+    align-items: center;
+    gap: .5vw;
+    /* letter-spacing: .1vw; */
+}
+
+.welcome .name a {
+    color: #FF5A00;
+    text-decoration: none;
+    font: 1.5vw sans-serif;
+}
+
+.welcome .name a span i {
+    font-size: 1.1vw;
+}
+
+.welcome .name a:hover {
+    text-decoration: underline;
+}
+
+.wind {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    padding: 6% 18% 5%;
+    z-index: 5;
+    transition: .6s linear;
+    width: 100%;
+    background: #161617;
+}
+
+.wind .cont {
+    display: none;
+    transition: .5s linear;
+    visibility: hidden;
+    gap: 5vw;
+}
+
+.wind .cont .block {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.wind .cont .block ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: .7vw;
+}
+
+.wind .cont .block p {
+    font: 300 .85vw sans-serif;
+    color: #8B8988;
+}
+
+.wind .cont .block ul li a {
+    font: bold .8vw sans-serif;
+    color: #fff;
+}
+
+.wind .cont .block:first-child ul li a {
+    font: bold 1.5vw sans-serif;
+    color: #fff;
+}
+
+.first-vid,
+.sec-vid,
+.three-vid,
+.for-vid {
+    width: 100%;
+    height: 150vh;
+    visibility: visible;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+
+.first-vid video,
+.sec-vid video,
+.three-vid video,
+.for-vid video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.first-vid h2,
+.sec-vid h2,
+.three-vid h2,
+.for-vid h2 {
+    position: fixed;
+    left: 50%;
+    text-align: center;
+    bottom: 10%;
+    translate: -50% 0;
+    text-shadow: 0 0 15px #000;
+    color: #fff;
+    opacity: 0;
+    font: bold 2.5vw sans-serif;
+}
+
+.VisPic {
+    opacity: 0;
+    display: flex;
+    align-items: start;
+    background: #fff;
+    height: 250vh;
+    padding-bottom: 5%;
+}
+
+.VisPic .box {
+    position: sticky;
+    top: 2.5%;
+    gap: .5vw;
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.VisPic h2 {
+    color: #000;
+    font: 550 6vw sans-serif;
+    display: flex;
+    align-items: center;
+    gap: .5vw;
+}
+
+.VisPic a {
+    color: #FF5A00;
+    display: flex;
+    gap: .5vw;
+    text-decoration: none;
+    font: bold 1.5vw sans-serif;
+}
+
+.VisPic .cont {
+    display: grid;
+    place-items: center;
+    gap: 1vw;
+}
+
+.VisPic .cont a:hover {
+    text-decoration: underline;
+}
+
+.VisPic a button {
+    width: 15vw;
+    height: 3.5vw;
+    border-radius: 50px;
+    border: .2vw solid #000;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    transition: .4s linear;
+    cursor: pointer;
+    font: 250 1.2vw sans-serif;
+}
+
+.VisPic img {
+    width: 65vw;
+}
+
+.VisPic a button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.NewVids,
+.NewTwoVids,
+.NewThreeVids,
+.NewForVids,
+.AfterVid {
+    width: 100%;
+    background: #fff;
+    height: 200vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.NewVids .container,
+.NewTwoVids .container,
+.NewThreeVids .container,
+.NewForVids .container,
+.AfterVid .container {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.NewVids .container video,
+.NewTwoVids .container video,
+.NewThreeVids .container video,
+.NewForVids .container video,
+.AfterVid .container video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: relative;
+}
+
+.NewVids .container::after,
+.NewTwoVids .container::after,
+.NewThreeVids .container::after,
+.NewForVids .container::after,
+.AfterVid .container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000086;
+}
+
+.NewVids .container .text,
+.NewTwoVids .container .text,
+.NewThreeVids .container .text,
+.NewForVids .container .text,
+.AfterVid .container .text {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    gap: .5vw;
+}
+
+.NewVids .container .text h2,
+.NewTwoVids .container .text h2,
+.NewThreeVids .container .text h2,
+.NewForVids .container .text h2,
+.AfterVid .container .text h2 {
+    font: bold 4vw sans-serif;
+    text-align: center;
+}
+
+.NewVids .container .text p,
+.NewTwoVids .container .text p,
+.NewThreeVids .container .text p,
+.NewForVids .container .text p,
+.AfterVid .container .text p {
+    font: bold 1.5vw sans-serif;
+}
+
+.About-of,
+.About-of-two,
+.About-of-three,
+.About-of-for,
+.About-of-last,
+.About-of-Gimg,
+.About-of-last,
+.About-of-Pics,
+.About-of-Slider {
+    padding: 5vw;
+    background: #fff;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.About-of .all,
+.About-of-two .all,
+.About-of-three .all,
+.About-of-for .all,
+.About-of-last .all,
+.About-of-Pics .all,
+.About-of-Slider .all,
+.About-of-Gimg .all {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    gap: 3.5vw;
+}
+
+.About-of .all:nth-child(2),
+.About-of-two .all:nth-child(2),
+.About-of-three .all:nth-child(2),
+.About-of-for .all:nth-child(2),
+.About-of-last .all:nth-child(2),
+.About-of-Pics .all:nth-child(2),
+.About-of-Slider .all:nth-child(2),
+.About-of-Gimg .all:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5vw;
+    justify-content: center;
+}
+
+.About-of .all:nth-child(1),
+.About-of-two .all:nth-child(1),
+.About-of-three .all:nth-child(1),
+.About-of-for .all:nth-child(1),
+.About-of-last .all:nth-child(1),
+.About-of-Pics .all:nth-child(1),
+.About-of-Slider .all:nth-child(1),
+.About-of-Gimg .all:nth-child(1) {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding-left: 15vw;
+}
+
+.About-of .all h2,
+.About-of-two .all h2,
+.About-of-three .all h2,
+.About-of-for .all h2,
+.About-of-last .all h2,
+.About-of-Pics .all h2,
+.About-of-Slider .all h2,
+.About-of-Gimg .all h2 {
+    /* position: absolute; */
+    letter-spacing: -.1vw;
+    font: bold 2vw sans-serif;
+    /* top: 15%;
+    left: 50%; */
+    /* translate: -50% -15%; */
+}
+
+.About-of .all p,
+.About-of-two .all p,
+.About-of-three .all p,
+.About-of-for .all p,
+.About-of-last .all p,
+.About-of-Pics .all p,
+.About-of-Slider .all p,
+.About-of-Gimg .all p {
+    color: #8B8988;
+    font: bold 1.35vw sans-serif;
+    line-height: 1.8vw;
+}
+
+.About-of .all a button,
+.About-of-two .all a button,
+.About-of-three .all a button,
+.About-of-for .all a button,
+.About-of-Slider .all a button,
+.About-of-Gimg .all a button,
+.LBleck-five .text a button {
+    border: none;
+    outline: none;
+    padding: 2.5% 5%;
+    background: #FF5A00;
+    color: #fff;
+    border-radius: 50px;
+    transition: .25s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    cursor: pointer;
+    font: bold 1.2vw sans-serif;
+}
+
+.LBleck-five .text a button {
+    background: #fff;
+    color: #000;
+    width: max-content;
+    height: 3.3vw;
+    padding: 0 8%;
+}
+
+.About-of .all a button:hover,
+.About-of-two .all a button:hover,
+.About-of-three .all a button:hover,
+.About-of-for .all a button:hover,
+.About-of-Slider .all a button:hover,
+.About-of-Gimg .all a button:hover {
+    background: #ff7d37;
+}
+
+.DesignOne,
+.BeforSlider {
+    display: flex;
+    align-items: start;
+    padding-bottom: 1%;
+    padding-top: 3%;
+    background: #fff;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.DesignOne .GapList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.DesignOne .GapList .ImagesPar {
+    display: flex;
+    gap: 0;
+}
+
+.DesignOne .GapList .ImagesPar img,
+.BeforSlider .GapList img {
+    width: 40vw;
+    object-fit: contain;
+}
+
+.DesignOne .GapList video {
+    width: 90vw;
+    height: 100vh;
+    object-fit: cover;
+    transition: 1s linear;
+}
+
+.DesignName {
+    background: #F5F5F7;
+    padding: 5% 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.DesignName p {
+    font: bold 1.5vw sans-serif;
+}
+
+.DesignName h2 {
+    font: bold 5vw sans-serif;
+}
+
+.DesignTwo {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 10%;
+    gap: 5vw;
+}
+
+.DesignTwo p {
+    font: bold 1.25vw sans-serif;
+    line-height: 1.85vw;
+    color: #8B8988;
+    text-align: center;
+}
+
+.DesignTwo p span {
+    color: #000;
+}
+
+.DesignTwo img {
+    width: 60vw;
+    position: relative;
+    bottom: 0;
+    opacity: 0;
+}
+
+.DesignTwo a {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    translate: -50% -80%;
+}
+
+.DesignTwo a button,
+.Privacy a button {
+    border: none;
+    outline: none;
+    width: max-content;
+    height: max-content;
+    padding: 7% 7%;
+    background: #FF5A00;
+    color: #fff;
+    border-radius: 50px;
+    transition: .25s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    cursor: pointer;
+    font: bold 1.3vw sans-serif;
+}
+
+.Privacy a button {
+    height: 2.6vw;
+}
+
+.DesignTwo button:hover,
+.Privacy a button:hover {
+    background: #ff7d37;
+}
+
+.BeforSlider .GapList {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 0;
+    top: 0;
+}
+
+.SliderPar {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+.SliderPar .BigList {
+    width: 400%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    transition: .4s cubic-bezier(1, -0.01, .83, .7);
+    left: -73%;
+    gap: 3vw;
+}
+
+.SliderPar .BigList .pics {
+    width: calc(80% / 4);
+    height: 100%;
+    height: 100%;
+    /* background: var(--sl) no-repeat center / cover fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SliderPar .BigList .pics img {
+    width: 100%;
+    height: 100%;
+    transition: .5s linear;
+    object-fit: cover;
+    opacity: .3;
+}
+
+.SliderPar button {
+    position: absolute;
+    background: transparent;
+    outline: none;
+    border: none;
+    z-index: 3;
+    top: 50%;
+    color: #fff;
+    opacity: 0;
+    text-shadow: 0 0 10px #000;
+    cursor: pointer;
+    font-size: 3.3vw;
+    transition: .5s linear;
+    translate: 0 -50%;
+}
+
+.SliderPar .bef {
+    right: 82vw;
+}
+
+.SliderPar .aft {
+    left: 82vw;
+}
+
+.rad {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    translate: -50% -10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    background: #000;
+    border-radius: 50px;
+    padding: .65% 1%;
+}
+
+.rad input {
+    appearance: none;
+    outline: none;
+    border: none;
+    width: .5vw;
+    height: .55vw;
+    background: #8B8988;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    transition: .3s linear;
+}
+
+.rad input:checked {
+    background: #fff;
+}
+
+.DesGirl {
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    background: #F5F5F7;
+}
+
+.DesGirl .Design-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    padding-left: 30%;
+    padding-top: 7.5%;
+}
+
+.DesGirl .Design-text p {
+    font: bold 1.3vw sans-serif;
+    letter-spacing: .03vw;
+    width: max-content;
+    line-height: 1.8vw;
+    color: #00000071;
+}
+
+.DesGirl .Design-text p span,
+.Privacy p span {
+    color: #000;
+}
+
+.DesGirl img {
+    width: 70vw;
+}
+
+.White-Shadow {
+    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: .1vw;
+    box-shadow: 0 0 250px 350px #fff;
+}
+
+.LastWomImg {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.LastWomImg img {
+    width: 90vw;
+    opacity: 0;
+}
+
+.Invis {
+    width: 100%;
+    height: 40vw;
+    background: linear-gradient(#fff 1%, #000 80%);
+}
+
+.LBleck-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    transform-style: preserve-3d;
+    padding: 10% 0 0 0;
+}
+
+.LBleck-one .text {
+    display: flex;
+    align-items: center;
+    transform-style: preserve-3d;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4vw;
+    text-align: center;
+    transform: perspective(40vw) rotateY(-60deg) rotateX(20deg);
+    color: #fff;
+}
+
+.LBleck-one .text .nameb {
+    display: flex;
+    transform-style: preserve-3d;
+    flex-direction: column;
+    text-align: center;
+    gap: 1vw;
+}
+
+.LBleck-one .text h3 {
+    font: bold 1.65vw sans-serif;
+}
+
+.LBleck-one .text h2 {
+    font: bold 5vw sans-serif;
+    line-height: 5vw;
+}
+
+.LBleck-one .text p {
+    font: bold 1.65vw sans-serif;
+    color: #8B8988;
+}
+
+.LBleck-one .text p span {
+    color: #fff;
+}
+
+.LBleck-one img {
+    width: 60vw;
+    opacity: 0;
+    object-fit: contain;
+}
+
+.LBleck-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0 27%;
+    transform-style: preserve-3d;
+    gap: 3vw;
+    color: #fff;
+    position: relative;
+}
+
+.LBleck-two .text {
+    display: flex;
+    flex-direction: column;
+    transform: perspective(40vw) rotateY(-60deg) rotateX(20deg);
+    align-items: center;
+    gap: 2.5vw;
+    justify-content: center;
+    text-align: center;
+}
+
+.LBleck-two .text h2,
+.LBleck-two .abtext h2,
+.LBleck-three .text h2,
+.LBleck-for .text h2,
+.LBleck-five .text h2 {
+    font: bold 2vw sans-serif;
+}
+
+.LBleck-two .text p,
+.LBleck-two .abtext p,
+.LBleck-three .text p,
+.LBleck-for .text p,
+.LBleck-five .text p,
+.Privacy p {
+    font: bold 1.35vw sans-serif;
+    color: #8B8988;
+    line-height: 2vw;
+}
+
+.LBleck-two .text p span,
+.LBleck-for .text p span {
+    color: #fff;
+}
+
+.LBleck-two video {
+    width: 100%;
+}
+
+.LBleck-two .abtext {
+    position: absolute;
+    left: 75%;
+    top: 90%;
+    translate: -75% -90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vw;
+    width: max-content;
+}
+
+.LBleck-three,
+.LBleck-for,
+.LBleck-five {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    gap: 2vw;
+    padding-top: 10%;
+}
+
+.LBleck-five {
+    gap: 0;
+}
+.LBleck-three .text,
+.LBleck-for .text,
+.LBleck-five .text {
+    display: flex;
+    flex-direction: column;
+    transform: perspective(40vw) rotateY(-60deg) rotateX(20deg);
+    align-items: center;
+    gap: 2.5vw;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.LBleck-three img,
+.LBleck-for img {
+    width: 62vw;
+    opacity: 0;
+}
+
+.LBleck-five img {
+    width: 93%;
+    opacity: 0;
+}
+
+.LBleck-five {
+    padding-bottom: 10%;
+}
+
+.ExitInvis {
+    width: 100%;
+    height: 40vw;
+    background: linear-gradient(#000 10%, #fff 90%);
+}
+
+.Privacy {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10% 0;
+    text-align: center;
+    gap: 4vw;
+}
+.Privacy img {
+    width: 4.5vw;
+}
+.Privacy h3 {
+    font: bold 1.5vw sans-serif;
+}
+.Privacy h2 {
+    font: bold 5vw sans-serif;
+    line-height: 5vw;
+}
+.namelast {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+footer {
+    font: 100 .8vw sans-serif;
+    width: 100%;
+    background: #F5F5F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .About {
+    width: max-content;
+    display: flex;
+    padding: 1.2% 0;
+    gap: .8vw;
+    border-bottom: .15vw solid #8B8988;
+    flex-direction: column;
+}
+footer .think {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+footer .About p {
+    color: #8B8988;
+}
+footer .About p a {
+    color: #272727;
+    text-decoration: underline;
+}
+footer > h3 {
+    display: flex;
+    gap: .3vw;
+    padding: 1% 0 0;
+    align-items: center;
+    justify-content: center;
+    font: bold 1vw sans-serif;
+}
+footer .end {
+    width: 60.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer .end .up {
+    width: 100%;
+    text-align: center;
+    padding: 2.5% 0;
+    color: #8B8988;
+}
+footer .end .down {
+    display: flex;
+    width: 100%;
+    padding: 0 0 2%;
+    justify-content: space-between;
+}
+footer .end .down .group {
+    display: flex;
+    gap: .5vw;
+}
+footer .end .grand {
+    display: flex;
+    gap: 1.75vw;
+}
+footer .end .down p {
+    color: #8B8988;
+}
+footer .end a {
+    color: #8B8988;
+    border-bottom: .1vw solid transparent;
+    transition: .2s linear;
+}
+footer .end a:hover {
+    border-bottom: .1vw solid #8B8988;
+}
